@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>My Little Website</title>
+    <link rel="stylesheet" href="/static/main.css">
+</head>
+
+<body>
+
+    <h1>HELLO {{ user }}</h1>
+
+    {% if user == "unknown" %}
+        <p>I don't know who you are.</p>
+    {% endif %}
+
+    <h2>Guestbook</h2>
+
+    <input
+        id="guestName"
+        type="text"
+        placeholder="Enter your name"
+    >
+
+    <button id="addGuest"> Add </button>
+
+    <ul id="guestList">
+        {% for guest in guests %}
+            <li>{{ guest }}</li>
+        {% endfor %}
+    </ul>
+
+</body>
+
+<script src="/static/main.js"></script>
+
+</html>
