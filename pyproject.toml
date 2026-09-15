@@ -1,0 +1,19 @@
+[project]
+name = "developing-the-interactive-web-lec-3-nhyo"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Qiwen Pang", email = "pqw735962446@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "halo>=0.0.31",
+]
+
+[project.scripts]
+developing-the-interactive-web-lec-3-nhyo = "developing_the_interactive_web_lec_3_nhyo:main"
+
+[build-system]
+requires = ["uv_build>=0.12.14,<0.13.0"]
+build-backend = "uv_build"
