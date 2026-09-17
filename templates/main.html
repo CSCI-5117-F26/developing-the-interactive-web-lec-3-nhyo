@@ -22,12 +22,15 @@
         placeholder="Enter your name"
     >
 
-    <button id="addGuest"> Add </button>
+    <button id="addGuest"> Add your name </button>
 
+    <h3>Guest(use "Add your name" to add more):</h3>
     <ul id="guestList">
+        
         {% for guest in guests %}
             <li>{{ guest }}</li>
         {% endfor %}
+
     </ul>
 
 </body>
