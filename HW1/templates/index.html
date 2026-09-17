@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="card">
+
+    <h2> Welcome ! </h2>
+
+    <p> This survey is about students. </p>
+
+    <p> Your participation is voluntary. Please choose whether you would like to participate in the survey. </p>
+
+    <div class="button-group">
+
+        <a
+            class="pure-button pure-button-primary"
+            href="{{ url_for('survey') }}"
+        > Consent </a>
+
+        <a
+            class="pure-button"
+            href="{{ url_for('decline') }}"
+        > Decline </a>
+
+    </div>
+
+</section>
+
+{% endblock %}
