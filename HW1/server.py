@@ -21,3 +21,7 @@ def decline():
 @app.route("/thanks")
 def thanks():
     return render_template("thanks.html")
+
+@app.route("/summary")
+def summary():
+    return render_template("summary.html")
