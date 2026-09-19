@@ -4,12 +4,147 @@
 
 <section class="card">
 
-    <h2> Survey </h2>
+    <h2>Student Eating Habits Survey</h2>
 
-    <p> Please answer the following questions. </p>
+    <p>
+        Please answer the following questions about your everyday eating habits.
+    </p>
+
+    <form
+        class="pure-form pure-form-stacked"
+        method="POST"
+        action="{{ url_for('survey') }}"
+    >
+
+        <fieldset>
+
+            <label for="favorite-food">
+                What is your favorite food or meal?
+            </label>
+
+            <input
+                id="favorite-food"
+                name="favorite_food"
+                type="text"
+                minlength="1"
+                required
+                placeholder="e.g. Noodles"
+            >
 
 
+            <label>
+                Where do you usually get most of your meals?
+            </label>
+
+            <label class="pure-radio">
+                <input
+                    type="radio"
+                    name="meal_source"
+                    value="home"
+                    required
+                >
+                Cook at home
+            </label>
+
+            <label class="pure-radio">
+                <input
+                    type="radio"
+                    name="meal_source"
+                    value="dining_hall"
+                >
+                University dining hall
+            </label>
+
+            <label class="pure-radio">
+                <input
+                    type="radio"
+                    name="meal_source"
+                    value="restaurant"
+                >
+                Restaurant or takeout
+            </label>
+
+            <label class="pure-radio">
+                <input
+                    type="radio"
+                    name="meal_source"
+                    value="ready_to_eat"
+                >
+                Ready-to-eat or frozen food
+            </label>
+
+            <label for="meals-per-day">
+                How many meals do you usually eat per day?
+            </label>
+
+            <select
+                id="meals-per-day"
+                name="meals_per_day"
+                required
+            >
+                <option value="">Select an option</option>
+                <option value="1">1 meal</option>
+                <option value="2">2 meals</option>
+                <option value="3">3 meals</option>
+                <option value="4+">4 or more meals</option>
+            </select>
+
+            <label class="pure-checkbox">
+                <input
+                    id="dietary-checkbox"
+                    name="has_dietary_restriction"
+                    type="checkbox"
+                >
+                I have dietary preferences or restrictions.
+            </label>
+
+            <div id="dietary-details" hidden>
+
+                <label for="dietary-text">
+                    Please describe your dietary preferences or restrictions.
+                </label>
+
+                <textarea
+                    id="dietary-text"
+                    name="dietary_details"
+                    rows="4"
+                    placeholder="e.g. Vegetarian, lactose-free, food allergies..."
+                    disabled
+                ></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="pure-button pure-button-primary"
+            >
+                Next
+            </button>
+
+        </fieldset>
+
+    </form>
 
 </section>
+
+
+<script>
+    const checkbox = document.querySelector("#dietary-checkbox");
+    const details = document.querySelector("#dietary-details");
+    const textarea = document.querySelector("#dietary-text");
+
+    checkbox.addEventListener("change", function () {
+
+        if (checkbox.checked) {
+            details.hidden = false;
+            textarea.disabled = false;
+        } else {
+            details.hidden = true;
+            textarea.disabled = true;
+        }
+
+    });
+</script>
 
 {% endblock %}

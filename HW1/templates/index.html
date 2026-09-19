@@ -4,23 +4,40 @@
 
 <section class="card">
 
-    <h2> Welcome ! </h2>
+    <h2>Student Eating Habits Survey</h2>
 
-    <p> This survey is about students. </p>
+    <p>
+        This short survey is about what students usually eat and their everyday eating habits.
+        We are interested in learning about students' favorite foods, where they usually get their meals,
+        and their dietary preferences.
+    </p>
 
-    <p> Your participation is voluntary. Please choose whether you would like to participate in the survey. </p>
+    <p>
+        The survey will take about 1–2 minutes to complete.
+        It does not ask for your name or contact information.
+    </p>
+
+    <p>
+        Your participation is voluntary.
+        By selecting "Consent", you agree to participate in this survey.
+        You may also choose "Decline" if you do not wish to participate.
+    </p>
 
     <div class="button-group">
 
         <a
             class="pure-button pure-button-primary"
             href="{{ url_for('survey') }}"
-        > Consent </a>
+        >
+            Consent
+        </a>
 
         <a
             class="pure-button"
             href="{{ url_for('decline') }}"
-        > Decline </a>
+        >
+            Decline
+        </a>
 
     </div>
 

@@ -8,7 +8,7 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/survey")
+@app.route("/survey", methods=["GET", "POST"])
 def survey():
     return render_template("survey.html")
 
